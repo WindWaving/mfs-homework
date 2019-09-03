@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="ContentType" content="text/html; charset=utf-8">
+    <title>表单</title>
+    <style>
+    form div{
+        margin: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <form action="" method="POST">
+        <div>
+            <label for="username">用户名</label>
+            <input type="text" placeholder="用户名" name="username">
+        </div>
+
+        <div>
+            <label for="password">密码</label>
+            <input type="password" placeholder="密码" name="password">
+        </div>
+        <div>
+            <label for="email">邮箱</label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <label for="num">数字</label>
+            <input type="number" name="num">
+        </div>
+        <div>
+            <label for="phone">电话</label>
+            <input type="tel" name="phone">
+        </div>
+        <div>
+            <label for="url">url</label>
+            <input type="url" name="url">
+        </div>
+        <div>
+            <label for="search">搜索</label>
+            <input type="search" name="search">
+        </div>
+        <div>
+            <label for="rang">range</label>
+            <input type="range" min="0" max="10" step="2">
+        </div>
+        <div>
+            <label for="color">color</label>
+            <input type="color" name="color">
+        </div>
+        <div>
+            <label for="dtme">具体日期</label>
+            <input type="datetime" name="dtme">
+        </div>
+        <div>
+            <label for="sex">性别</label>
+            <input type="radio" name="sex">男
+            <input type="radio" name="sex">女
+        </div>
+        <div>
+            <label for="skill">技能</label>
+            <input type="checkbox" name="skill">HTML
+            <input type="checkbox" name="skill">CSS
+            <input type="checkbox" name="skill">JavaScript
+        </div>
+        <div>
+            <label for="city">所在城市</label>
+            <select name="city">
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="深圳">深圳</option>
+            </select>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <button type="submit" value="提交" name="submit">提交</button>
+            <button type="reset" value="重置" name="reset">重置</button>
+        </div>
+    </form>
+</body>
+
+</html>

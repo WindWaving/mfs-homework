@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>表单</title>
+</head>
+
+<body>
+    <form action="#" method="POST">
+        <div>
+            <label for="email">邮箱</label>
+            <input type="email" name="email" onblur="if(!this.value.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)){
+                alert('邮箱输入格式错误');
+                this.value='';
+            }
+                " required>
+        </div>
+        <div>
+            <label for="num">排号</label>
+            <input type="number" min="0" max="100" step="2" onblur="if(this.value<0||this.value>100){
+                    this.value='';
+                    alert('请输入0-100的偶数');
+                }
+                if(this.value%2!=0){
+                    this.value='';
+                    alert('请输入偶数');
+                }">
+        </div>
+        <div>
+            <label for="city">城市</label>
+            <input type="text" list="city" name="城市">
+            <datalist id="city">
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="广州">广州</option>
+                <option value="深圳">深圳</option>
+            </datalist>
+        </div>
+        <div>
+            <button type="submit">提交</button>
+        </div>
+    </form>
+</body>
+
+</html>
