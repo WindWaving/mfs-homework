@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    position: relative;
+}
+.linkpool{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 20%;
+    height: 100%;
+    font-size: 1.3rem;
+}
+.linkpool a{
+    color: rgb(9, 138, 116);
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+iframe{
+    width: 70%;
+    height: 100%;
+}
+.cktext{
+    color: rgb(237, 71, 84);
+    position: absolute;
+    left: 10%;
+    top: 50%;
+}
