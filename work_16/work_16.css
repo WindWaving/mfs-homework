@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url("../image/work_16.png")
+}
+header{
+    padding: 30px 100px;
+}
+.flt{
+    float: left;
+    margin-left: 2rem;
+    list-style: none;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: 0.8;
+}
+.tit{
+    float: left;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-div{
+    margin-left: 3rem;
+    float: left;
+}
+
+.sign-div{
+    float: right;
+}
+#submenu{
+    display: none;
+    margin-top: 10px;
+    list-style: none;
+    
+}
