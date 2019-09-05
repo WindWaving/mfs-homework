@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>下拉菜单</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul li{
+            list-style: none;
+            margin: auto 5px;
+            padding: 5px 10px;
+            border: 1px solid black;
+            background: rgb(74, 52, 111);
+        }
+        ul li a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        .menu {
+            float: left;
+        }
+
+        .submenu {
+            display: none;
+            margin-top: 10px;
+        }
+        .submenu li{
+            color: white;
+            border: none;
+        }
+        .submenu li:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li class="menu"  onmouseover="show(this)" onmouseout="hide(this)">
+            <a href="#">菜单一</a>
+            <ul class="submenu">
+                <li>红色</li>
+                <li>黄色</li>
+                <li>蓝色</li>
+            </ul>
+        </li>
+        <li class="menu"  onmouseover="show(this)" onmouseout="hide(this)">
+            <a href="#" >菜单二</a>
+            <ul class="submenu">
+                <li>大</li>
+                <li>中</li>
+                <li>小</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script>
+    function show(obj){
+        obj.getElementsByTagName('ul')[0].style.display="block";
+    }
+    function hide(obj){
+        obj.getElementsByTagName('ul')[0].style.display="none";
+    }
+</script>
+
+</html>
