@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="flex" content="圣杯">
+        <title>圣杯布局</title>
+    </head>
+    <style>
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    header,footer{
+        height: 100px;
+        background: rosybrown;
+    }
+    .container{
+        display: flex;
+        background: yellowgreen;
+        flex: 1;
+    }
+    .mid,.left,.right{
+        min-height: 300px;
+    }
+    .mid{
+        background: bisque;
+        flex: 1;
+    }
+    .left{
+        background: sandybrown;
+        width: 200px;
+        order: -1;
+    }
+    .right{
+        background: pink;
+        width: 200px;
+    }
+    </style>
+    <body>
+        <header>头部</header>
+        <div class="container">
+            <div class="mid">中间</div>
+            <div class="left">左侧边栏</div>
+            <div class="right">右侧边栏</div>
+        </div>
+        <footer>底部</footer>
+    </body>
+</html>
