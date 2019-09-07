@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>响应式</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            color: #777777;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 863px) {
+            .menu {
+                float: left;
+                background: #f8f8f8;
+            }
+        }
+
+        @media (max-width: 862px) {
+            .menu {
+                background: #f8f8f8;
+            }
+        }
+
+        .menu>a {
+            display: block;
+            padding: 0.5rem 1rem;
+        }
+
+        .menu>a:hover {
+            color: black;
+            background: #e7e7e7;
+        }
+
+        i {
+            width: 0;
+            height: 0;
+            border-top: 4px solid;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            position: absolute;
+            top: 50%;
+            left: 3.2rem;
+        }
+
+        #submenu {
+            padding: 1rem;
+            display: none;
+            border: 1px solid #c9c9c9;
+            box-shadow: 0 0 5px #d3d3d3;
+        }
+
+        .sub {
+            margin-bottom: .5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="menu"><a href="#">菜鸟教程</a></li>
+            <li class="menu"><a href="#">IOS</a></li>
+            <li class="menu"><a href="#">SVN</a></li>
+            <li class="menu"><a href="#" style="position: relative" onclick="show()">Java<i></i></a>
+
+                <ul id="submenu">
+                    <li class="sub"><a href="#">jmeter</a></li>
+                    <li class="sub"><a href="#">EJB</a></li>
+                    <li class="sub"><a href="#">Jasper Report</a></li>
+                    <hr>
+                    <li class="sub" style="margin-top: .5rem"><a href="/">分离的链接</a></li>
+                    <hr>
+                    <li class="sub" style="margin-top: .5rem"><a href="/">另一个分离的链接</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+<script>
+    function show() {
+        var submenu = document.getElementById('submenu');
+        if (submenu.style.display == "block") {
+            submenu.style.display = "none";
+        } else {
+            submenu.style.display = "block";
+        }
+    }
+</script>
+
+</html>
