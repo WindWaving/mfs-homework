@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    font-size: 14px;
+}
+body{
+    background: #ebebeb;
+}
+.header{
+    background-image: url("../image/header-bg.jpg");
+    padding-top: 4rem;
+    
+}
+.head-bkg{
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+.head-bkg h1{
+    font-size: 30px;
+    color: white;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    background: white;
+    overflow: hidden;
+    padding: 20px;
+    border-top: 1px solid  #e1e1e1;
+    border-bottom: 2px solid  #e1e1e1;
+}
+nav ul li{
+    float: left;
+    list-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+nav ul li a{
+    color: #505050;
+    font-size: 1rem;
+}
+
+nav li a:hover{
+    color: #f4645f;
+}
+nav li a:visited{
+    text-decoration: underline;
+}
+nav li a:active{
+    text-decoration: underline;
+}
+.container{
+    width: 100%;;
+    margin: 20px auto;
+    padding-left: 60px;
+    padding-right: 60px;
+    overflow: hidden;
+}
+.arti-box{
+    width: 65%;
+    float: left;
+}
+.container .articles{
+    
+    background: white;
+    padding: 35px;
+    margin-bottom: 35px;
+}
+.container .articles .arti-head{
+    text-align: center;
+}
+.articles .arti-head-auth a:hover,.arti-body-text a:hover{
+    text-decoration: underline;
+}
+.articles a:active{
+    text-decoration: underline;
+}
+.articles .arti-body-link a:hover{
+    text-decoration: none;
+    background: #303030;
+}
+.container .articles .arti-head h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.container .articles .arti-head h1 a{
+    color: black;
+}
+.container .articles .arti-head .arti-head-auth {
+    color:#959595;
+}
+.container .articles .arti-head .arti-head-auth a{
+    color: #f4645f;
+}
+.arti-body{
+    margin-top: 2.5rem;
+}
+.arti-body .arti-body-img{
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+.arti-body .arti-body-img img{
+    width: 100%;
+}
+.arti-body .arti-body-text{
+    font-size: 18px;
+}
+.arti-body .arti-body-text a{
+    color: #f4645f;
+}
+.arti-body .arti-body-link{
+    margin-top: 2.5rem;
+}
+.arti-body .arti-body-link a{
+    padding: .5rem 1rem;
+    background: #f4645f;
+    color: white;
+    transition: .5s ease;
+}
+.articles footer{
+    margin-top: 2.5rem;
+}
+.container aside{
+    width: 32%;
+    background: white;
+    float: right;
+    padding: 20px 30px 
+}
+aside .side-head{
+    position: relative;
+}
+aside .side-head h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.side-head h3::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    width: 6rem;
+    background: #f4645f;
+}
+aside a{
+    margin-top: 5px;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    color: white;
+    background: #f4645f;
+    transition: 0.5s ease;
+}
+aside a:hover{
+    background: #303030;
+}
+footer.foot{
+    position: relative;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background: rgb(32, 32, 32);
+}
+.footer-main{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: #505050;
+    margin-bottom: 5rem;
+}
+.footer-main section{
+    position: relative;
+    width: 33%;
+    padding: 0 3rem;
+}
+.footer-main section header{
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #303030;
+}
+.footer-main header::after{
+    content: "";
+    position: absolute;
+    left: 3rem;
+    top: 32px;
+    height: 1px;
+    width: 6rem;
+    background: #f4645f;
+}
+.footer-main a{
+    color: #959595;
+}
+.footer-main .footer-tits{
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #303030;
+    margin-bottom: 1rem;
+}
+.footer-main .footer-tits a:hover{
+    color: #f4645f;
+}
+.footer-main .hlplink{
+    border-bottom: 1px dashed #303030;
+    overflow: hidden;
+}
+.footer-main .hlplink a{
+    display: block;
+    margin-bottom: 1rem;
+    padding: .3rem;
+    float: left;
+    width: 50%;
+    transition: 0.5s ease;
+
+}
+.footer-main .hlplink a:hover,.foot-tab a:hover{
+    background: #f4645f;
+    color: white;
+}
+
+.footer-main .hlplink-2{
+    clear: both;
+    margin-top: 1rem;
+    border: none;
+}
+.footer-main .foot-tab a{
+    border: 1px solid #303030;
+    padding: 2px 7px;
+    transition: 0.5s ease;
+
+}
+.copyright{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem 0;
+    background: #111;
+    border-top: 1px solid #303030;
+    color: #555;
+    text-align: center;
+}
+.copyright a{
+    color: #555;
+}
+.copyright span{
+    padding: 1rem 0;
+}
+.copyright a:hover{
+    text-decoration: underline;
+}
