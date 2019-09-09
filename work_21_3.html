@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>flex圣杯布局</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+
+        }
+
+        .main,
+        .left,
+        .right {
+            height: 100%;
+        }
+
+        .main {
+            background: skyblue;
+            flex: 1;
+        }
+
+        .left {
+            width: 200px;
+            background: lightsalmon;
+            order: -1;
+        }
+
+        .right {
+            width: 300px;
+            background: moccasin;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>
