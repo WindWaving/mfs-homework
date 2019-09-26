@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>使用canvas画圆</title>
+</head>
+
+<body>
+    <canvas width="600" height="600" id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var flag = 1;
+
+    //画表                          
+    function clockPlate() {
+        if (flag == 1) {
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            ctx.scale(-1,-1);
+            ++flag;
+        }
+        ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+
+        ctx.save();
+        //画表盘
+        ctx.beginPath();
+        ctx.strokeStyle = "#73bbfb";
+        ctx.lineWidth = 10;
+        ctx.arc(0, 0, 100, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.arc(0, 0, 5, 0, Math.PI * 2);
+        ctx.stroke();
+        //画时刻
+        for (var i = 0; i < 360; i += 6) {
+            ctx.beginPath();
+            if (i % 30 == 0) {
+                ctx.strokeStyle = "blue";
+                ctx.lineWidth = 4;
+                ctx.moveTo(0, 75);
+            } else {
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "green";
+                ctx.moveTo(0, 80);
+            }
+            ctx.lineTo(0, 90);
+            ctx.stroke();
+            ctx.rotate(6 * Math.PI / 180);
+
+        }
+        ctx.restore();
+    }
+    //画时针
+    function drawHour(hour, minute) {
+        ctx.save();
+        var hourAgl = 30 * hour * Math.PI / 180;
+        console.log(hour,hourAgl);
+        //每分钟0.1度
+        var minAgl = minute * 0.1 * Math.PI / 180;
+        var angle = hourAgl + minAgl;
+        ctx.rotate(angle);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, 30);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+        ctx.restore();
+    }
+    //画分针
+    function drawMin(minute,sec){
+        ctx.save();
+        //1分钟6度，1秒0.1度
+        var minAgl=minute*6*Math.PI/180;
+        var secAgl=sec*0.1*Math.PI/180;
+        var angle=minAgl+secAgl;
+        ctx.rotate(angle);
+        ctx.moveTo(0,0);
+        ctx.lineTo(0,45);
+        ctx.lineWidth=2;
+        ctx.strokeStyle="red";
+        ctx.stroke();
+        ctx.restore();
+    }
+    //秒针
+    function drawSec(sec){
+        ctx.save();
+        var angle=sec*6*Math.PI/180;
+        ctx.rotate(angle);
+        ctx.moveTo(0,0);
+        ctx.lineTo(0,60);
+        ctx.lineWidth=1;
+        ctx.strokeStyle="red";
+        ctx.stroke();
+        ctx.restore();
+    }
+    setInterval(() => {
+        ctx.clearRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
+        clockPlate();
+        var date = new Date();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var sec = date.getSeconds();
+        drawHour(hour, minute);
+        drawMin(minute,sec);
+        drawSec(sec);
+    }, 1000);
+
+</script>
+
+</html>
