@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>中奖</title>
+    <style>
+    #award{
+        height: 3rem;
+        line-height: 3rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="award">点击“开始“按钮，开始抽奖！</div>
+    <div class="action">
+        <button id="start">开 始</button>
+        <button id="stop" disabled>停 止</button>
+    </div>
+</body>
+<script>
+    var start = document.getElementById('start');
+    var stop = document.getElementById('stop');
+    var award = document.getElementById('award');
+    start.addEventListener('click', startGame);
+    stop.addEventListener('click', stopGame);
+    var timer;
+    function startGame() {
+        start.disabled = true;
+        stop.disabled = false;
+        timer = setInterval(() => {
+            var rand = Math.ceil(Math.random() * 100);
+            if (rand == 1) {
+                award.innerHTML = "特等奖";
+            } else if (rand >= 2 && rand <= 11) {
+                award.innerHTML = "一等奖";
+            } else if (rand >= 13 && rand <= 42) {
+                award.innerHTML = "二等奖";
+            } else if (rand >= 43 && rand <= 82) {
+                award.innerHTML = "三等奖";
+            } else {
+                award.innerHTML = "鼓励奖";
+            }
+        }, 10);
+    }
+    function stopGame() {
+        clearInterval(timer);
+        start.disabled=false;
+        stop.disabled=true;
+    }
+</script>
+
+</html>
