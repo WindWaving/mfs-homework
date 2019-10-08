@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标签页</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: black;
+            padding: 10px 20px;
+        }
+
+        ul li {
+            float: left;
+            border: 1px solid rgb(194, 194, 194);
+            background: black;
+            color: white;
+            list-style: none;
+            width: 100px;
+            line-height: 2rem;
+            text-align: center;
+        }
+
+        .tabshow {
+            background: white;
+            color: black;
+        }
+
+        .content {
+            border: 1px solid white;
+            width: 600px;
+            height: 400px;
+        }
+
+        .boxes {
+            clear: both;
+            display: none;
+            color: white;
+            padding: 1rem;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="tabshow">Tab1</li>
+        <li>Tab2</li>
+        <li>Tab3</li>
+    </ul>
+    <div class="content">
+        <div class="boxes show">标签页1的内容</div>
+        <div class="boxes">标签页2的内容</div>
+        <div class="boxes">标签页3的内容</div>
+    </div>
+</body>
+<script>
+    var tabs = document.getElementsByTagName('li');
+    var boxes = document.getElementsByClassName('boxes');
+    for (let i = 0; i < tabs.length; ++i) {
+        tabs[i].addEventListener('click', changeTab(i));
+    }
+    function changeTab(ind) {
+        return function (e) {
+            for (let i = 0; i < tabs.length; ++i) {
+                tabs[i].className = "";
+                boxes[i].className = "boxes";
+            }
+            console.log(ind);
+            tabs[ind].className = "tabshow";
+            boxes[ind].className = "boxes show";
+        }
+
+    }
+</script>
+
+</html>
