@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>购物车</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        header {
+            position: relative;
+            height: 4rem;
+            padding: 1rem;
+            box-sizing: border-box;
+            background: #f5f5f5;
+            border-bottom: 1px solid rgb(228, 226, 226);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .shoplist {
+            position: absolute;
+            z-index: 10;
+            background: #ff4400;
+            color: white;
+            display: none;
+            padding: 1rem;
+            transition: 0.5s ease;
+        }
+
+        .cardiv:hover .shoplist {
+            display: block;
+            /* padding: 0 1rem; */
+        }
+
+        .empty {
+            display: inline-block;
+        }
+
+        .container {
+            position: absolute;
+            top: 4rem;
+            background: rgb(236, 236, 236);
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .goods {
+            width: 15rem;
+            height: 25rem;
+            background: white;
+            border: 1px solid rgb(212, 212, 212);
+            float: left;
+            margin: .5rem;
+            text-align: center;
+        }
+
+        .goods .imgs {
+            width: 100%;
+        }
+
+        .goods .imgs img {
+            width: 100%;
+        }
+
+        .goods h3 {
+            line-height: 3rem;
+        }
+
+        .goods button {
+            background: #ff4400;
+            outline: none;
+            border: none;
+            padding: .5rem 1rem;
+            color: white;
+            transition: 0.5s ease;
+        }
+
+        .goods button:hover {
+            background: black;
+        }
+
+        .clear {
+            clear: both;
+            text-align: center;
+        }
+
+        .confirm {
+            padding: .5rem 1rem;
+        }
+
+        .nums {
+            margin-bottom: 1rem;
+        }
+
+        .nums input {
+            width: 3rem;
+            text-align: center;
+        }
+
+        footer {
+            background: black;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .minus,
+        .plus {
+            margin: 0 .2rem 0 .5rem;
+            width: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="cardiv">
+            <span class="car">购物车</span>
+            <ul class="shoplist">
+                <li class="empty">您的购物车空空如也</li>
+
+            </ul>
+        </div>
+
+    </header>
+
+    <div class="container">
+        <div class="goods">
+            <div class="imgs">
+                <img src="https://g-search1.alicdn.com/img/bao/uploaded/i4/i4/717005079/O1CN01iygp101nOEB8XmlBq_!!0-item_pic.jpg_460x460Q90.jpg_.webp"
+                    alt="四大名著">
+            </div>
+            <h3>四大名著全套</h3>
+            <div class="nums">
+                <input type="number" value="1" title="请输入购买数量">
+            </div>
+            <button class="tocar">加入购物车</button>
+        </div>
+        <div class="goods">
+            <div class="imgs">
+                <img src="https://g-search1.alicdn.com/img/bao/uploaded/i4/i2/750636142/O1CN01uxQZU91vF59muqLMp_!!0-item_pic.jpg_460x460Q90.jpg_.webp"
+                    alt="朝花夕拾">
+            </div>
+            <h3>朝花夕拾</h3>
+            <div class="nums">
+                <input type="number" value="1" title="请输入购买数量">
+            </div>
+            <button class="tocar">加入购物车</button>
+        </div>
+        <div class="goods">
+            <div class="imgs">
+                <img src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i4/717005079/O1CN01pFOlZV1nOE6PYlRmA_!!0-item_pic.jpg_460x460Q90.jpg_.webp"
+                    alt="小王子">
+            </div>
+            <h3>小王子</h3>
+            <div class="nums">
+                <input type="number" value="1" title="请输入购买数量">
+            </div>
+            <button class="tocar">加入购物车</button>
+        </div>
+        <div class="goods">
+            <div class="imgs">
+                <img src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i4/1120957850/O1CN01BN6GfJ27rLfjPAdyI_!!0-item_pic.jpg_460x460Q90.jpg_.webp"
+                    alt="世界名著">
+            </div>
+            <h3>世界名著20套</h3>
+            <div class="nums">
+                <input type="number" value="1" title="请输入购买数量">
+            </div>
+            <button class="tocar">加入购物车</button>
+        </div>
+        <div class="goods">
+            <div class="imgs">
+                <img src="https://g-search1.alicdn.com/img/bao/uploaded/i4/i1/859515618/O1CN01qbuoZ51rN5e3EzBuK_!!0-item_pic.jpg_460x460Q90.jpg_.webp"
+                    alt="三体">
+            </div>
+            <h3>三体</h3>
+            <div class="nums">
+                <input type="number" value="1" title="请输入购买数量">
+            </div>
+            <button class="tocar">加入购物车</button>
+        </div>
+        <div class="clear">
+            <button class="confirm" onclick="javascript:window.location.reload()">确认</button>
+        </div>
+    </div>
+    <footer>
+        版权所有
+    </footer>
+</body>
+<script>
+    if (document.cookie != "") {
+        var cookies = document.cookie.split(";");
+        for (var i = 0; i < cookies.length; i += 3) {
+            var id = cookies[i].split("=")[1];
+            var item = decodeURIComponent(cookies[i + 1].split("=")[1]);
+            var num = decodeURIComponent(cookies[i + 2].split('=')[1]);
+            changeShoplist(id, item, num);
+        }
+    }
+    $(".tocar").click(function () {
+        var item = $(this).siblings('h3').html();
+        var num = $(this).prev().children('input').val();
+        var $goods = $(this).parent();
+        var id = $('div.goods').index($goods);
+        var newnum = +num;
+        if ($.cookie("id" + id) != undefined) {
+            $.removeCookie("id" + id);
+            $.removeCookie("item" + id);
+            newnum += parseInt($.cookie('num' + id));
+            $.removeCookie("num" + id);
+        }
+        $.cookie('id' + id, id);
+        $.cookie('item' + id, item);
+        $.cookie('num' + id, newnum);
+        changeShoplist(id, item, num);
+    })
+
+    $('.shoplist').on("click", "li .minus", function () {
+        var curnum = $(this).siblings('.num').html();
+        var newnum = parseInt(curnum) - 1;
+        var id = $(this).siblings('.id').text();
+        var item = $(this).siblings('.item').text();
+        $.removeCookie("id" + id);
+        $.removeCookie("item" + id);
+        $.removeCookie("num" + id);
+        if (newnum == 0) {
+            $(this).parent().remove();
+            if($('.empty').siblings('li').size()==0){
+                $('.empty').css('display', 'normal');
+            }
+        } else {
+            $(this).siblings('.num').html(newnum);
+            $.cookie('id' + id, id);
+            $.cookie('item' + id, item);
+            $.cookie('num' + id, newnum);
+        }
+    })
+    $('.shoplist').on("click", "li .plus", function () {
+        var curnum = $(this).siblings('.num').html();
+        var newnum = parseInt(curnum) + 1;
+        $(this).siblings('.num').html(newnum);
+        var id = $(this).siblings('.id').text();
+        var item = $(this).siblings('.item').text();
+        $.removeCookie("id" + id);
+        $.removeCookie("item" + id);
+        $.removeCookie("num" + id);
+        $.cookie('id' + id, id);
+        $.cookie('item' + id, item);
+        $.cookie('num' + id, newnum);
+    })
+    function changeShoplist(id, item, num) {
+        var btn1 = "<button class='minus'>-</button>";
+        var btn2 = "<button class='plus'>+</button>";
+        var span0 = "<span class='id' style='display:none'>" + id + "</span>";
+        var span1 = "<span class='item'>" + item + "</span>";
+        var span2 = "<span class='num'>" + num + "</span>";
+        var li = "<li>" + span0 + span1 + btn1 + span2 + btn2 + "</li>";
+        $(".shoplist").append(li);
+        if ($('.empty').css('display') == "inline-block") {
+            $('.empty').css('display', 'none');
+        }
+    }
+</script>
+
+</html>
