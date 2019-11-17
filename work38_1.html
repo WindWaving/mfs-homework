@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>表单验证</title>
+</head>
+
+<body>
+    <form id="signup" action="#" target="_blank" onsubmit="return onSignupFormSubmit()">
+        <p id="signup-error" style="color:red"></p>
+        <p>
+            用户名:
+            <input id="username" type="text" name="username">
+        </p>
+        <p>
+            口令:
+            <input type="password" id="password" name="password">
+        </p>
+        <p>
+            重复口令:
+            <input type="password" id="password-2">
+        </p>
+        <p>
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+        </p>
+    </form>
+</body>
+<script>
+    function onSignupFormSubmit() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var password2 = document.getElementById('password-2').value;
+        var re = new RegExp('^[a-zA-Z][0-9a-zA-Z_]{5,15}');
+        if (!re.test(username)) {
+            console.log(username);
+            alert("用户名格式错误");
+            return false;
+        }
+        re = new RegExp('.{8,20}')
+        if (username == "" || password == "" || password2 == "") {
+            alert("表单没有填写完整");
+            return false;
+        }
+        if (password != password2) {
+            alert("两次口令不相同");
+        }
+        else if (!re.test(password)) {
+            console.log(password);
+            alert("口令格式错误");
+        }
+        console.log(password);
+
+        return false;
+    }
+
+</script>
+
+</html>
