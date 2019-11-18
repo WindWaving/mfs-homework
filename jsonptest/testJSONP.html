@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="name">输入字符串：</label>
+        <input type="password" id="name" name="name">
+        <button onclick="btnclick()">查看输入</button>
+    </div>
+    <div id="test">
+    </div>
+</body>
+<script>
+    function btnclick() {
+        var name = document.getElementById('name').value;
+        var script = document.createElement('script');
+        script.src = "testJsonP.php?name="+name+"&callback=getData";
+        document.body.insertBefore(script, document.body.firstChild);
+    }
+
+    function getData(data) {
+        document.getElementById("test").innerHTML = data;
+    }
+</script>
+
+</html>
