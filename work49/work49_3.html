@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <title>图片懒加载</title>
+    <style>
+    .a{
+        height: 800px;
+    }
+    .box{
+        width: 300px;
+        height: 200px;
+        background: wheat;
+    }
+    img{
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="a"></div>
+    <div class="box">
+        <img data-src="https://tse2-mm.cn.bing.net/th?id=OIP.mKXjfx4bWYVulo6asj7tDgHaFn&w=250&h=190&c=7&o=5&dpr=1.5&pid=1.7">
+    </div>
+    <div class="a"></div>
+</body>
+<script>
+    function isShow($img) {
+        var winH=$(window).height();
+        var scrollH=$(document).scrollTop();
+        var imgH=$img.height();
+        var imgTop=$img.offset().top;
+        return imgTop+imgH>=scrollH&&imgTop<=scrollH+winH;
+      }
+window.onscroll=function(){
+    console.log(isShow($('img')));
+    if(isShow($('img'))){
+        $('img').attr("src",$('img').data('src'));
+    }
+}
+</script>
+</html>

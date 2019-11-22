@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <title>scroll top</title>
+    <style>
+        .content {
+            width: 1000px;
+            height: 2000px;
+            margin: 0 auto;
+            background: gray;
+        }
+
+        .back-top {
+            width: 50px;
+            height: 50px;
+            background: salmon;
+            color: white;
+            font-size: 50px;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            text-align: center;
+            display: none;
+        }
+
+        .back-top:hover {
+            cursor: pointer;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <div class="back-top">^</div>
+</body>
+<script>
+    window.onscroll = function () {
+        if ($(document).scrollTop() > 100) {
+            $('.back-top').addClass('show');
+        } else {
+            $('.back-top.show').removeClass('show');
+        }
+    }
+    $('.back-top').on('click', function () {
+        $("html,body").animate({ scrollTop: 0 }, 500);
+    })
+</script>
+
+</html>
